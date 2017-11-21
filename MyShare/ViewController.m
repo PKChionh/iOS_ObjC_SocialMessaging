@@ -26,4 +26,74 @@
 }
 
 
+- (IBAction)btnSendTweet:(id)sender
+{
+    // Twitter
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *composeVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        [composeVC setInitialText: self.txtMessage.text];
+        
+        [self presentViewController:composeVC
+                           animated:YES
+                         completion:nil];
+    }
+    
+}
+
+- (IBAction)btnSendFBMessage:(id)sender
+{
+    // Facebook
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewController *composeVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [composeVC setInitialText: self.txtMessage.text];
+        
+        [self presentViewController:composeVC
+                           animated:YES
+                         completion:nil];
+    }
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
